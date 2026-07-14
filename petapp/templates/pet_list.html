@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet List</title>
+</head>
+<body>
+    <h1> PET LIST </h1>
+
+    <a href="{% url 'pet_add' %}">Add Pet</a> 
+    <hr>
+    {% for pet in pets %}
+    <h3> {{ pet.pet_name }} </h3>
+    <img src="{{ pet.pet_image.url }}" alt="{{ pet.pet_name }}" width="150"><br><br>
+    <a href="{% url 'pet_edit' pet.id %}">Edit</a> |
+    <a href="{% url 'pet_delete' pet.id %}">Delete</a>
+        <hr>
+        
+    {% endfor %}
+    
+    
+</body>
+</html>
