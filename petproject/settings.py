@@ -32,10 +32,11 @@ DEBUG = os.getenv("DEBUG") == "True"
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 
-ALLOWED_HOSTS = os.environ.get(
-    "ALLOWED_HOSTS",
-    "127.0.0.1,localhost"
-).split(",")
+ALLOWED_HOSTS = [
+    "pet-project-fhp4.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
